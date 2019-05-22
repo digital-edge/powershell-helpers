@@ -316,7 +316,7 @@ foreach ($Computer in $Computers)
     {
 
       # Check if hotfix is installed
-      if (Get-HotFix -Id $Hotfix -ComputerName $computer | Out-Null)
+      if ($hf = Get-HotFix -Id $Hotfix -ComputerName $computer)
       {
         $kbinstall = "Installed"
       }
